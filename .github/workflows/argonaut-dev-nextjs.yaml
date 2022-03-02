@@ -33,10 +33,10 @@ jobs:
 
       - name: build-docker
         run: |
-          wget https://github.com/buildpacks/pack/releases/download/v0.22.0/pack-v0.22.0-linux.tgz -O pack.tgz
+          wget https://github.com/buildpacks/pack/releases/download/v0.24.0/pack-v0.24.0-linux.tgz -O pack.tgz
           tar xvf pack.tgz
           rm pack.tgz
-          ./pack build ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/argonaut/nextjs:${{ steps.get_sha.outputs.SHA_SHORT }} --path ./ --builder heroku/buildpacks:18 
+          ./pack build ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/argonaut/nextjs:${{ steps.get_sha.outputs.SHA_SHORT }} --path ./ --builder heroku/buildpacks:20 
           docker save ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/argonaut/nextjs:${{ steps.get_sha.outputs.SHA_SHORT }} > image.tar
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
