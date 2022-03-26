@@ -79,5 +79,5 @@ jobs:
           chmod +x ./art
           sudo mv ./art /usr/local/bin/art
           sudo art configure --key ${{ secrets.ART_KEY }} --secret ${{ secrets.ART_SECRET }}
-          sudo art app deploy -f .art/argonaut-dev-nextjs.yaml --set image="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/argonaut/nextjs" --set 'labels.argonaut\.dev/git-provider'='github' --set argonaut.git-provider='github' --set imageTag="${{ steps.get_sha.outputs.SHA_SHORT }}"  --set appName="nextjs"  --set argonaut.env="dev"  --set argonaut.region="us-east-1"  --set argonaut.cluster="dev"  --set argonaut.serviceType="stateless"  --set argonaut.imageRegistry="ecr" 
+          sudo art app deploy -f .art/argonaut-dev-nextjs.yaml --set image="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/argonaut/nextjs" --set 'labels.argonaut\.dev/git-provider'='github' --set argonaut.git-provider='github' --set imageTag="${{ steps.get_sha.outputs.SHA_SHORT }}"  --set appName="nextjs"  --set argonaut.env="dev"  --set argonaut.region="us-east-1"  --set argonaut.cluster="dev"  --set argonaut.serviceType="stateless"  --set argonaut.imageRegistry="ecr" --wait=false
 
