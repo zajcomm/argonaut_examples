@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const Home: NextPage<IProps> = ({ todo }) => {
-  return <div>{todo.title}</div>;
+  return <div>{todo?.title}</div>;
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
