@@ -38,7 +38,7 @@ jobs:
           tar xvf pack.tgz
           rm pack.tgz
           ./pack build ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/argonaut/nextjs:${{ steps.get_sha.outputs.SHA_SHORT }} --builder paketobuildpacks/builder:full
-          docker save ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/argonaut/nextjs:${{ steps.get_sha.outputs.SHA_SHORT }} > image.tar
+          docker save ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/argonaut/nextjs:${{ steps.get_sha.outputs.SHA_SHORT }} > ../image.tar
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
