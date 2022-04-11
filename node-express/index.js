@@ -4,6 +4,6 @@ const app = express();
 
 app.get('/', (_req, res) => res.send("PING_PONG"));
 
-app.listen(3000, () => {
-  console.log("Server listening on 3000")
+app.listen(process.env.NODE_PORT, () => {
+  console.log(`Server listening on ${process.env.NODE_PORT}`)
 })
