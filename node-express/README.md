@@ -41,3 +41,11 @@ app.listen(process.env.NODE_PORT, () => {
  - `Secrets` : Secrets are exposed to the app as environment variables. They will be populated in `process.env` inside our Node project.
 
  ![image](https://user-images.githubusercontent.com/9110203/162894811-9ca6cb52-999a-4c43-975d-d05d0afcbb0a.png)
+
+- After filling up all these fields, click on the 'Deploy' button. You will immediately be taken to the logs screen.
+
+![image](https://user-images.githubusercontent.com/9110203/162896423-a8de9db2-905e-4e19-aacf-aa906c6b1d12.png)
+
+- You can find your app in the `Applications` section anytime.
+
+![image](https://user-images.githubusercontent.com/9110203/162896689-a45dab26-e3f2-4593-a97c-77ae01d5e4cc.png)
