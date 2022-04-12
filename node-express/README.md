@@ -49,3 +49,7 @@ app.listen(process.env.NODE_PORT, () => {
 - You can also find your app in the `Applications` section anytime.
 
 ![image](https://user-images.githubusercontent.com/9110203/162896689-a45dab26-e3f2-4593-a97c-77ae01d5e4cc.png)
+
+Ready to get started?
+Sign Up Today! at [https://ship.argonaut.dev/](https://ship.argonaut.dev/)
+Check out our [documentation here](https://www.argonaut.dev/docs) 
