@@ -46,6 +46,6 @@ app.listen(process.env.NODE_PORT, () => {
 
 ![image](https://user-images.githubusercontent.com/9110203/162896423-a8de9db2-905e-4e19-aacf-aa906c6b1d12.png)
 
-- You can find your app in the `Applications` section anytime.
+- You can also find your app in the `Applications` section anytime.
 
 ![image](https://user-images.githubusercontent.com/9110203/162896689-a45dab26-e3f2-4593-a97c-77ae01d5e4cc.png)
