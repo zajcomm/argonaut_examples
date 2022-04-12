@@ -29,6 +29,15 @@ app.listen(process.env.NODE_PORT, () => {
 
 ![image](https://user-images.githubusercontent.com/9110203/162891234-a00cb457-6c08-4800-88ec-8a183062c874.png)
 
-- Choose Git Source in the `New Deployment` page.
+- Choose Git Source in the `New Deployment` page and select your repository. Then click on Next.
 
 ![image](https://user-images.githubusercontent.com/9110203/162893034-c1104b5d-1491-4dff-ab2e-075f3dec1a25.png)
+![image](https://user-images.githubusercontent.com/9110203/162893455-56293741-b07a-4e3e-8c3f-9be5f55de5e5.png)
+
+### Before deploying Argonaut needs to know some key information about how to run your app. 
+ - `Build Method` : Here you can choose which node version you need. We have selected node:latest
+ - `Build Context` : Here you can specify a subfolder that will act as the root directory of the app during the build
+ - `Run Command` : Command to run the project
+ - `Secrets` : Secrets are exposed to the app as environment variables. They will be populated in `process.env` inside our Node project.
+
+ ![image](https://user-images.githubusercontent.com/9110203/162894811-9ca6cb52-999a-4c43-975d-d05d0afcbb0a.png)
