@@ -24,3 +24,11 @@ app.listen(process.env.NODE_PORT, () => {
 ```
 
 ## Deploy using [Argonaut](https://argonaut.dev)
+
+- Log in to your Argonaut account and go to the `Applications` section. Then click on the `Deploy` button.
+
+![image](https://user-images.githubusercontent.com/9110203/162891234-a00cb457-6c08-4800-88ec-8a183062c874.png)
+
+- Choose Git Source in the `New Deployment` page.
+
+![image](https://user-images.githubusercontent.com/9110203/162893034-c1104b5d-1491-4dff-ab2e-075f3dec1a25.png)
