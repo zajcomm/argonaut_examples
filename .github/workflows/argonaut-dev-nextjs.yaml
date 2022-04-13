@@ -33,10 +33,10 @@ jobs:
 
       - name: build-docker
         run: |
-          wget https://github.com/buildpacks/pack/releases/download/v0.22.0/pack-v0.22.0-linux.tgz -O pack.tgz
+          wget https://github.com/buildpacks/pack/releases/download/v0.24.0/pack-v0.24.0-linux.tgz -O pack.tgz
           tar xvf pack.tgz
           rm pack.tgz
-          ./pack build ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/argonaut/nextjs:${{ steps.get_sha.outputs.SHA_SHORT }} --path ./ --builder heroku/buildpacks:18 
+          ./pack build ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/argonaut/nextjs:${{ steps.get_sha.outputs.SHA_SHORT }} --path ./nextjs --builder paketobuildpacks/builder:full
           docker save ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/argonaut/nextjs:${{ steps.get_sha.outputs.SHA_SHORT }} > image.tar
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
@@ -79,5 +79,5 @@ jobs:
           chmod +x ./art
           sudo mv ./art /usr/local/bin/art
           sudo art configure --key ${{ secrets.ART_KEY }} --secret ${{ secrets.ART_SECRET }}
-          sudo art app deploy -f .art/argonaut-dev-nextjs.yaml --set image="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/argonaut/nextjs" --set 'labels.argonaut\.dev/git-provider'='github' --set argonaut.git-provider='github' --set imageTag="${{ steps.get_sha.outputs.SHA_SHORT }}"  --set appName="nextjs"  --set argonaut.env="dev"  --set argonaut.region="us-east-1"  --set argonaut.cluster="dev"  --set argonaut.serviceType="stateless"  --set argonaut.imageRegistry="ecr" 
+          sudo art app deploy -f .art/argonaut-dev-nextjs.yaml --set image="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/argonaut/nextjs" --set 'labels.argonaut\.dev/git-provider'='github' --set argonaut.git-provider='github' --set imageTag="${{ steps.get_sha.outputs.SHA_SHORT }}"  --set appName="nextjs"  --set argonaut.env="dev"  --set argonaut.region="us-east-1"  --set argonaut.cluster="dev"  --set argonaut.serviceType="stateless"  --set argonaut.imageRegistry="ecr" --wait=false
 
