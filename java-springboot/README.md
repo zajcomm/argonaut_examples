@@ -14,6 +14,8 @@
 
 - Open your project in your IDE and navigate to `src/main/resources/application.properties`.
 
+- Navigate to `<your project's root>/pom.xml` and change `<version>` inside `<project>` tag to `1`
+
 - Add `server.port=3000` to the file. This is done to override the default 8080 port which is used by lambdas.
 
 - Navigate to `src/main/java/<your group>/api/ApiApplication.java` and add the following code:
@@ -45,3 +47,5 @@ public class ApiApplication {
 The above code adds a `/` route to your web server using Spring Web's Decorators and returns a simple string on that route.
 
 ## Argonaut Deployment
+
+![image](https://user-images.githubusercontent.com/9110203/168996195-d9d79f5b-ac2c-46c5-8927-9181d87a6ce3.png)
