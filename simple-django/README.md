@@ -28,4 +28,3 @@ DATABASES = {
 
 ![image](https://user-images.githubusercontent.com/9110203/163164782-82bb2310-b41f-455f-a167-c4a83ba40d60.png)
 
-
