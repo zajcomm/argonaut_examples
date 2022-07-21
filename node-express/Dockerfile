@@ -3,7 +3,7 @@ FROM node:16-alpine
 
 FROM node:16
 ENV NODE_ENV=production
-ENV PORT=80
+ENV NODE_PORT=80
 
 WORKDIR /app
 
