@@ -45,7 +45,10 @@ envFrom: []
 # A list of secrets and their paths to mount inside the pod
 # This is useful for mounting certificates for security
 secretMounts:
-  []
+  - name: test-secret
+    secretName: test-secret
+    path: /app/secrets
+sidecarResources:
   # - name: beamd-cert
   #   secretName: beamd-cert
   #   path: /usr/share/myapp/config/certs
