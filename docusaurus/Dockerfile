@@ -3,7 +3,7 @@ FROM node:18-alpine
 
 FROM node:18
 ENV NODE_ENV=production
-ENV NODE_PORT=80
+ENV NODE_PORT=3000
 
 WORKDIR /app
 
@@ -13,6 +13,6 @@ RUN npm install --production
 
 COPY . .
 
-EXPOSE 9999
+EXPOSE 3000
 
-CMD [ "node", "index.js" ]
+CMD [ "npm", "start" ]
