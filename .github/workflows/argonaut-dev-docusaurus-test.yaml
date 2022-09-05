@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  ART_MIDGARD_SERVER: midgard.pp.argonaut.live
+  ART_MIDGARD_SERVER: a6d9-2405-201-680a-bc1d-ac5c-8f0c-acca-fbf3.in.ngrok.io
   ART_FRONTEGG_SERVER: argonaut-pp.frontegg.com
 
 
