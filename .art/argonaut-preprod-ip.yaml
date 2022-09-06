@@ -12,7 +12,8 @@ services:
       hosts:
         - "ip.pp.argonaut.live"
       hostPort: 443
-      paths: ["/"]
+      paths:
+        - "/app"
 
 argonaut:
   env: preprod
