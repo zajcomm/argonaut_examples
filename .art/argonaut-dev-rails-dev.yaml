@@ -7,10 +7,10 @@ imageTag: "latest"
 
 services:
   - port: 5000
-    protocol: "tls-terminated" # tls-passthrough, tls-terminated, tcp, http, grpc need to be supported
+    protocol: "http" # tls-passthrough, tls-terminated, tcp, http, grpc need to be supported
     external:
       hosts:
-        - "rails.dev.argonaut.live"
+        - "rails.pp.argonaut.live"
       hostPort: 443
       paths: ["/"]
 
