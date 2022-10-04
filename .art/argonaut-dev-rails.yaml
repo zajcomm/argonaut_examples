@@ -5,6 +5,15 @@ image: "170982004044.dkr.ecr.us-east-2.amazonaws.com/argonaut/rails"
 imageTag: "latest"
 
 
+services:
+  - port: 5000
+    protocol: "tls-terminated" # tls-passthrough, tls-terminated, tcp, http, grpc need to be supported
+    external:
+      hosts:
+        - "rails.dev.argonaut.live"
+      hostPort: 443
+      paths: ["/"]
+
 argonaut:
   env: dev
   region: us-east-2
