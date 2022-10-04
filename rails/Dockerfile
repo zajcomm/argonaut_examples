@@ -14,5 +14,5 @@ RUN bundle install
 EXPOSE 5000
 
 # Run a shell
-RUN pwd
+RUN foreman run rake orange
 CMD ["foreman", "start", "-f", "/opt/app/Procfile.dev"]

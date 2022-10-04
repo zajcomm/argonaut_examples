@@ -1,5 +1,13 @@
-<h1>Welcome</h1>
+<main class="container">
 
-<%= form_with url: welcome_trigger_job_path do |f| %>
- <%= f.submit 'Launch job' %>
-<% end %>
+  <h1>Welcome</h1>
+
+  <%= form_with url: welcome_trigger_job_path do |f| %>
+  <%= f.submit 'Launch sample job' %>
+  <% end %>
+
+  <%= form_with url: welcome_rake_job_path do |f| %>
+  <%= f.submit 'Launch Rake job' %>
+  <% end %>
+
+</main>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get "welcome/index"
   post "welcome/trigger_job"
+  post "welcome/rake_job"
 
   # Defines the root path route ("/")
   # root "articles#index"
