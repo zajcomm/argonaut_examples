@@ -18,10 +18,16 @@ v3.1.2
 ## Deployment instructions
 
 - Deploy redis in your cluster using Argonaut's Custom App Deployment feature. Use [https://artifacthub.io/packages/helm/bitnami/redis](https://artifacthub.io/packages/helm/bitnami/redis). Set `auth.enabled` and `auth.sentinel` in the values.yaml to `false`.
+![image](https://user-images.githubusercontent.com/9110203/193815264-bef2218c-4929-441d-911b-4e3fa5854738.png)
 
 - We are using foreman to run our app and by default it listens on port `5000`. So, in Argonaut we need to specify that under Network Services section.
 
 - The UI to launch jobs is available at `<domain>/welcome/index`
+
+![image](https://user-images.githubusercontent.com/9110203/193814855-f1e3422e-53ee-48c9-960c-8078455f03d4.png)
+![image](https://user-images.githubusercontent.com/9110203/193814875-13613315-3030-4077-8993-af3007545517.png)
+![image](https://user-images.githubusercontent.com/9110203/193814862-cef2feb9-bc30-4867-b1cd-c813b3b3f08f.png)
+
 
 ## Sidekiq
 
