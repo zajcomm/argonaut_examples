@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7.0
+    ports:
+      - "6379:6379"
+    volumes:
+      - argonaut-redis:/var/lib/redis/data
+
+  rails:
+    build:
+      context: .
+    volumes:
+      - ./argonaut:/opt/app
+    links:
+      - redis
+    ports:
+      - "5000:5000"
+
+volumes:
+  argonaut-redis:
