@@ -1,7 +1,7 @@
 ---
 version: "v1"
-appName: "rails" 
-image: "170982004044.dkr.ecr.us-east-2.amazonaws.com/argonaut/rails"
+appName: "rails-dev" 
+image: "170982004044.dkr.ecr.us-east-2.amazonaws.com/argonaut/rails-dev"
 imageTag: "latest"
 
 
@@ -10,14 +10,14 @@ services:
     protocol: "tls-terminated" # tls-passthrough, tls-terminated, tcp, http, grpc need to be supported
     external:
       hosts:
-        - "rails.arg685.argonaut.live"
+        - "rails.dev.argonaut.live"
       hostPort: 443
       paths: ["/"]
 
 argonaut:
   env: dev
   region: us-east-2
-  cluster: arg-685
+  cluster: dev
   imageRegistry: ecr # corresponding to the image that is to be deployed
   serviceType: "stateless" # One of {stateful, stateless, managed}
   repoName: examples
@@ -29,8 +29,8 @@ minReplicas: 1
 maxReplicas: 1
 resources:
   requests:
-    cpu: "500m"
-    memory: "512M"
+    cpu: "200m"
+    memory: "212M"
   limits:
     cpu: "1000m"
     memory: "1500M"
