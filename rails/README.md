@@ -1,27 +1,45 @@
 # README
 
+Welcome to the example rails application by Argonaut. Follow the instructions below and you will get your rails app up and running in no time.
+
 ## Ruby version
 
 v3.1.2
 
 ## System dependencies
 
-ruby
-rails
-gem
-foreman
+- ruby
+- rails
+- gem
+- foreman
 
-`bundle install` will automatically install all other dependencies.
-
-## Sidekiq
-
-- Sidekiq job can be configured in app/sidekiq/hard_job.rb
-
-- Sidekiq requires Redis to be available and running on its default port 6379. Redis url can be overridden with the env variable `REDIS_URL`
-  Example: `REDIS_URL=redis://redis-instance:6379/1`
-
-- Sidekiq's web UI is available at <domain>/sidekiq
+- The `bundle install` command, included in the Dockerfile, will automatically install all other dependencies.
 
 ## Deployment instructions
 
-- Deploy redis in your cluster using Argonaut's Custom App Deployment feature. Use [https://artifacthub.io/packages/helm/bitnami/redis](https://artifacthub.io/packages/helm/bitnami/redis)
+- Deploy redis in your cluster using Argonaut's Custom App Deployment feature. Use [https://artifacthub.io/packages/helm/bitnami/redis](https://artifacthub.io/packages/helm/bitnami/redis). Set `auth.enabled` and `auth.sentinel` in the values.yaml to `false`.
+
+- We are using foreman to run our app and by default it listens on port `5000`. So, in Argonaut we need to specify that under Network Services section.
+
+- The UI to launch jobs is available at `<domain>/welcome/index`
+
+## Sidekiq
+
+- Sidekiq jobs can be configured in `app/sidekiq`
+
+- Sidekiq requires Redis to be available and running on its default port 6379. Redis url can be overridden with the env variable `REDIS_URL`
+  Example: `REDIS_URL=redis://redis-master:6379/1`
+
+- Sidekiq's web UI is available at `<domain>/sidekiq`
+
+## Rake
+
+- It is convention to put rake tasks in `lib/tasks` in rails projects.
+
+- The rake task included with the examples here (`lib/tasks/orange.rake`) prints a message in the console. The task is executed through sidekiq but can also be executed using foreman run.
+
+- To observe the task being run, open pod logs in your cluster for the rails app and click on the `"Launch Rake Job"` button.
+
+## Why Procfile
+
+- We need to run rails server and sidekiq on different threads which is why we use foreman to launch two different services.
