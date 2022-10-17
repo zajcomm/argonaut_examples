@@ -53,3 +53,4 @@ app.listen(process.env.NODE_PORT, () => {
 Ready to get started?
 Sign Up Today! at [https://ship.argonaut.dev/](https://ship.argonaut.dev/)
 Check out our [documentation here](https://www.argonaut.dev/docs) 
+
