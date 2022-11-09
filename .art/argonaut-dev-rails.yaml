@@ -42,7 +42,7 @@ resources:
 livenessProbe:
   exec:
     command:
-      - echo "Hello world"
+      - echo "Hello"
   # exec:
   #   command:
   #     - sh
@@ -59,7 +59,7 @@ livenessProbe:
 readinessProbe:
   exec:
     command:
-      - echo "Hello world"
+      - echo "Hello"
   # # Handler 2
   # exec:
   #   command:
